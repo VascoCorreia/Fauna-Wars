@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="CSS/styleRecruit.css">
+  <title>Fauna Wars</title>
+
+</head>
+
+<body>
+  <div class="wrapper">
+
+    <div class="info">
+      <div>
+        <!--CURRENT CITY NAME-->
+        <p id="cityName"></p>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" onclick=showCities()>Cities</button>
+        <ul id="myDropdown" class="dropdown-content">
+
+        </ul>
+      </div>
+    </div>
+
+    <div class="points">
+      <!--PLAYER TOTAL POINTS-->
+      <p id="playerPoints">Points:</p>
+    </div>
+
+    <div class="rank">
+      <!--PLAYER RANK-->
+      <p id="playerRank">Rank:</p>
+    </div>
+
+    <div class="resources">
+      <!--PLAYER CITY RESOURCES-->
+      <div id="Wood">
+        <img id="woodIcon" src="/img/wood_icon_example.png">
+        <p id="woodAmount"></p>
+      </div>
+      <div id="Stone">
+        <img id="stoneIcon" src="/img/stone_icon_example.png">
+        <p id="stoneAmount"></p>
+      </div>
+      <div id="Clay">
+        <img id="clayIcon" src="/img/clay_icon_example.png">
+        <p id="clayAmount"></p>
+      </div>
+    </div>
+
+    <div class="leftmenu">
+      <!--LEFT NAVIGATION MENU-->
+      <div><button class="menu-buttons" id="goToMap">Map</button></div>
+      <div><button class="menu-buttons" id="goToCity">City</button></div>
+      <div><button class="menu-buttons" id="goToMainBuilding">Build</button> </div>
+      <div><button type="submit" formaction="/recruit.html" class="menu-buttons" id="goToRecruit">Recruit</button></div>
+    </div>
+
+    <!--CENTER WINDOW-->
+
+    <div class="centerArea">
+
+      <div class="building-top">
+        <!--TOP OF BUILDING WINDOW-->
+        <div id="buildingImg">
+          <img src="img/barracks.png"></img>
+        </div>
+        <div id="buildingName">Barracks</div>
+      </div>
+
+      <div class="building-chart">
+        <!--START OF BUILDING TABLE IN BUILDING WINDOW-->
+
+        <div class="building-chart-cell">Troops</div>
+        <div class="building-chart-cell">Requirements</div>
+        <div class="building-chart-cell">Recruit</div>
+
+        <div class="building-chart-cell">Swordsman</div>
+
+        <div class="building-chart-cell">
+
+          <div>
+            <img src="/img/wood_icon_example.png">
+            <p id="swordsmanWoodCost"></p>
+          </div>
+
+          <div>
+            <img src="/img/stone_icon_example.png">
+            <p id="swordsmanStoneCost"></p>
+          </div>
+
+          <div>
+            <img src="/img/clay_icon_example.png">
+            <p id="swordsmanClayCost"></p>
+          </div>
+
+        </div>
+
+        <div class="building-chart-cell">
+          <input type="number" id="amountSwordsman" value="0" min="0"></input>
+          <button id="recruitSwordsman">Recruit</button>
+        </div>
+
+        <div class="building-chart-cell">Archer</div>
+
+        <div class="building-chart-cell">
+
+          <div>
+            <img src="/img/wood_icon_example.png">
+            <p id="archerWoodCost"></p>
+          </div>
+
+          <div>
+            <img src="/img/stone_icon_example.png">
+            <p id="archerStoneCost"></p>
+          </div>
+
+          <div>
+            <img src="/img/clay_icon_example.png">
+            <p id="archerClayCost"></p>
+          </div>
+
+        </div>
+
+        <div class="building-chart-cell">
+          <input type="number" id="amountArcher" value="0" min="0"></input>
+          <button id="recruitArcher">Recruit</button>
+        </div>
+
+        <div class="building-chart-cell">Cavalry</div>
+
+        <div class="building-chart-cell">
+
+          <div>
+            <img src="/img/wood_icon_example.png">
+            <p id="cavalryWoodCost"></p>
+          </div>
+
+          <div>
+            <img src="/img/stone_icon_example.png">
+            <p id="cavalryStoneCost"></p>
+          </div>
+
+          <div>
+            <img src="/img/clay_icon_example.png">
+            <p id="cavalryClayCost"></p>
+          </div>
+
+        </div>
+
+        <div class="building-chart-cell">
+          <input type="number" id="amountCavalry" value="0" min="0"></input>
+          <button id="recruitCavalry">Recruit</button>
+        </div>
+
+      </div>
+    </div>
+    <!--CENTER WINDOW END-->
+
+    <div class="rightmenu">
+      <div>
+        <p>Troops</p>
+        <ul id="troopsList">
+          <li id="swordsmanInCity"></li>
+          <li id="archerInCity"></li>
+          <li id="cavalryInCity"></li>
+        </ul>
+      </div>
+
+      <div>
+        <p>Construction</p>
+        <ol id="contructionQueue">
+          <li id="firstInQueue"></li>
+          <li id="secondInQueue"></li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="alliedMovements">
+      <p>My Movements:</p>
+      <ol id="AllyMovements">
+
+      </ol>
+    </div>
+
+    <div class="enemyMovements">
+      <p>Enemy Movements:</p>
+      <ol id="enemyMovements">
+
+      </ol>
+    </div>
+
+    <div class="settings"></div>
+
+    <div class="leaderboard">
+      <button id="goToLeaderboard" class="down-menu-buttons">leaderboard</button>
+      <button id="logout" class="down-menu-buttons">Logout</button>
+    </div>
+
+  </div>
+
+  <script src="p5.js"></script>
+  <script src="../addons/p5.sound.min.js"></script>
+  <script src="setup.js"></script>
+  <script src="initializeUI.js"></script>
+  <script src="buildingUpgradesTimers.js"></script>
+  <script src="attackTimer.js"></script>
+  <script src="recruit.js"></script>
+  <script src="/Classes/objects.js"></script>
+
+
+  <!--SCRIPT FOR CITY  DROPDOWN  MENU-->
+
+  <script>
+    /* When the user clicks on the button, toggle between hiding and showing the dropdown content */
+    function showCities() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown menu if the user clicks outside of it
+    window.onclick = function (event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>

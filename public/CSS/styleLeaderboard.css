@@ -1,0 +1,354 @@
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/img/Background_Images/background.jpg");
+  }
+
+  ul{
+    padding-inline-start: 0px;
+  }
+
+  .wrapper {
+    display: grid;
+    gap: 10px;
+    margin: 5px 15%;
+    grid-template-columns: 20% 30% 30% 20%;
+    grid-template-rows: minmax(50px,auto) minmax(500px,auto) minmax(50px,auto);
+    grid-template-areas: 
+    "info points rank resources"
+    "leftmenu centerArea centerArea rightmenu"
+    "settings alliedMovements enemyMovements leaderboard";
+
+  }
+
+  .info{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-area:info ;
+    background-color: rgb(192, 185, 174);
+    border: 2px solid;
+    align-items: center;
+    text-align: center;
+  }
+
+  #cityName {
+    border-right: 1px solid;
+  }
+
+  .rank  {
+    display: grid;
+    grid-area: rank;
+    background-color: rgb(192, 185, 174);
+    border: 2px;
+    border-style: solid;
+    text-align: center;
+    font-size: large;
+    font-weight:bold;
+  }
+
+  .points {
+    display: grid;
+    grid-area: points;
+    background-color: rgb(192, 185, 174);
+    border: 2px solid;
+    text-align: center;
+    font-size: large;
+    font-weight:bold;
+  }
+
+  .resources{
+    display:grid;
+    grid-area: resources;
+    grid-template-columns: repeat(3,1fr);
+    background-color: rgb(192, 185, 174);
+    border: 2px solid;
+  }
+
+  .resources > div  {
+    display: flex;
+    align-items: center;
+    background-color: rgb(192, 185, 174);
+    margin-left: 2px;
+  }
+
+  #Wood{
+    border-right: 2px solid;
+  }
+
+  #Stone{
+    border-right: 2px solid;
+  }
+
+  .leftmenu  {  
+    display: grid; 
+    grid-area: leftmenu;
+    background-color: rgb(192, 185, 174);
+    grid-template-rows: repeat(4,1fr);
+    justify-content: center;
+    justify-items: center;
+    border: 2px;
+    border-style: solid;
+    gap:5px;
+    
+  }
+
+  .leftmenu > div {  
+    display: flex;
+    align-items: center;
+    margin:  5px  0px; 
+  }
+
+  .leftmenu > div> button{
+    width: 200px;
+    height:80px;
+  }
+
+  .rightmenu  {  
+    display: grid; 
+    grid-area: leftmenu;
+    background-color: rgb(192, 185, 174);
+    grid-template-rows: repeat(2,1fr);
+    padding: 10px;
+    gap: 5px;
+  }
+
+  .rightmenu  >  div { 
+    border: 2px;
+    background-color: rgb(192, 185, 174);
+    border-style: solid;
+    text-align: center;
+    font-weight: bold;
+    border-style: solid;
+  }
+
+
+  .rightmenu{
+    grid-area: rightmenu;
+    background-color: rgb(192, 185, 174);
+    border: 2px solid;
+  }
+
+  .settings{
+    grid-area: settings;
+    background-color: rgb(192, 185, 174);
+    border: 2px solid;
+  }
+
+  .alliedMovements {
+    grid-area: alliedMovements;
+    background-color: rgb(192, 185, 174);
+    border: 2px solid;
+  }
+
+  .alliedMovements > p{
+    margin-left:10px
+  }
+
+  .enemyMovements{
+    grid-area: enemyMovements;
+    background-color: rgb(192, 185, 174);
+    border: 2px solid;
+  }
+
+ .enemyMovements > p{
+    margin-left:10px
+  }
+
+  .leaderboard {
+    grid-area: leaderboard;
+    background-color: rgb(192, 185, 174);
+    border: 2px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .centerArea{
+  display: grid;
+  grid-area: centerArea;
+  grid-template-columns: 1fr;
+  grid-template-rows: 20% 80%;
+  border: 2px solid black;
+  }
+
+  .centerArea .building-top{  /*top part of  building menu*/
+    display:grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 1fr;
+    background-color:  rgb(129, 129, 129);
+    border: 2px solid;
+    margin: 2px;
+  }
+
+  .centerArea .building-top #buildingName{
+    display: flex;
+    font-size: xx-large;
+    font-weight: bold;
+    align-items: center;
+    padding-left: 20px;
+    border: 1px solid;
+  }
+
+  .centerArea .building-top #buildingImg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid;
+  }
+
+  .centerArea .building-chart{ /*bottom part of  building menu*/
+    display:grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(6,1fr);
+    background-color: lightgrey;
+    border: 2px solid;
+    margin: 2px;
+    gap:1px
+  }
+
+  .centerArea .building-chart .building-chart-cell {
+    display: flex;
+    border: 2px  solid;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: lightgrey;
+    font-size: larger;
+    font-weight: bold;
+  }
+
+  .centerArea .building-chart .building-chart-cell:nth-child(2){  /*dont apply on separations  on requirements cell*/
+    display: flex;
+    border: 2px  solid;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: lightgrey;
+  }
+
+  .centerArea .building-chart .building-chart-cell:nth-child(-n+5){
+    background-color: rgb(129, 129, 129);
+    font-size: larger;
+    font-weight: bold;
+  }
+
+  .centerArea .building-chart .building-chart-cell > div {
+    border: 1px solid;
+  }
+
+  .building-chart-cell > button{
+    margin-left: 8px;
+  }
+
+  .building-chart-cell > div> p{
+
+    margin: 0px;
+  }
+
+  #troopsList {
+    padding-inline-start: 40px;
+  }
+
+  #troopsList > li  {
+    text-align: start;
+  }
+
+  #contructionQueue > li  {
+    text-align: start;
+  }
+
+  /* Dropdown Button */
+  .dropbtn {
+    background-color: rgb(189, 159, 125);
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    }
+    
+    /* Dropdown button on hover & focus */
+    .dropbtn:hover, .dropbtn:focus {
+    background-color: rgb(155, 130, 102);
+    }
+    
+    /* The container <div> - needed to position the dropdown content */
+    .dropdown {
+    position: relative;
+    display: inline-block;
+    }
+    
+    /* Dropdown Content (Hidden by Default) */
+    .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    list-style-type: none;
+    }
+    
+    /* Links inside the dropdown */
+    .dropdown-content li {
+    color: black;
+    padding: 12px 16px;
+    margin: 0px;
+    text-decoration: none;
+    display: block;
+    
+    }
+    
+    /* Change color of dropdown links on hover */
+    .dropdown-content li:hover {background-color: #ddd}
+    
+    /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+    .show {display:block;}
+
+.menu-buttons {
+	box-shadow:inset 0px 0px 0px 0px #a6827e;
+	background-color:#948c84;
+	border-radius:14px;
+	border:3px solid #423124;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:Georgia;
+	font-size:17px;
+	padding:22px 40px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #4d3534;
+}
+.menu-buttons:hover {
+	background-color:#9e8468;
+}
+.menu-buttons:active {
+	position:relative;
+	top:1px;
+}
+
+.down-menu-buttons {
+	box-shadow:inset 0px 0px 0px 0px #a6827e;
+	background-color:#948c84;
+	border-radius:14px;
+	border:3px solid #423124;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:Georgia;
+	font-size:12px;
+  padding:8px 10px;
+  margin: 5px;
+  width: 90px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #4d3534;
+}
+.down-menu-buttons:hover {
+	background-color:#9e8468;
+}
+.down-menu-buttons:active {
+	position:relative;
+	top:1px;
+}

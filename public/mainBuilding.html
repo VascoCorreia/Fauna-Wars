@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="CSS/styleBuild.css">
+  <title>Fauna Wars</title>
+
+</head>
+
+<body>
+  <div class="wrapper">
+
+    <div class="info">
+      <div>
+        <!--CURRENT CITY NAME-->
+        <p id="cityName"></p>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" onclick=showCities()>Cities</button>
+        <ul id="myDropdown" class="dropdown-content">
+
+        </ul>
+      </div>
+    </div>
+
+    <div class="points">
+      <!--PLAYER TOTAL POINTS-->
+      <p id="playerPoints"></p>
+    </div>
+
+    <div class="rank">
+      <!--PLAYER RANK-->
+      <p id="playerRank">Rank:</p>
+    </div>
+
+    <div class="resources">
+      <!--PLAYER CITY RESOURCES-->
+      <div id="Wood">
+        <img id="woodIcon" src="/img/wood_icon_example.png">
+        <p id="woodAmount"></p>
+      </div>
+      <div id="Stone">
+        <img id="stoneIcon" src="/img/stone_icon_example.png">
+        <p id="stoneAmount"></p>
+      </div>
+      <div id="Clay">
+        <img id="clayIcon" src="/img/clay_icon_example.png">
+        <p id="clayAmount"></p>
+      </div>
+    </div>
+
+    <div class="leftmenu">
+      <!--LEFT NAVIGATION MENU-->
+      <div><button class="menu-buttons" id="goToMap">Map</button></div>
+      <div><button class="menu-buttons" id="goToCity">City</button></div>
+      <div><button class="menu-buttons" id="goToMainBuilding">Build</button> </div>
+      <div><button class="menu-buttons" id="goToRecruit">Recruit</button></div>
+    </div>
+
+    <!--CENTER WINDOW-->
+
+    <div class="centerArea">
+      <div class="building-top">
+        <!--TOP OF BUILDING WINDOW-->
+        <div id="buildingImg">
+          <img src="img/mainBuilding.png"></img>
+        </div>
+        <div id="buildingName">Main Building</div>
+      </div>
+
+      <div class="building-chart">
+        <!--START OF BUILDING TABLE IN BUILDING WINDOW-->
+
+        <div class="building-chart-cell">Buildings</div>
+        <div class="building-chart-cell">Requirements</div>
+        <div class="building-chart-cell">Build</div>
+
+        <div class="building-chart-cell">Main Building</div>
+
+        <div class="building-chart-cell">
+
+          <div>
+            <img src="/img/wood_icon_example.png">
+            <p id="mainBuildingWoodCost"></p>
+          </div>
+
+          <div>
+            <img src="/img/stone_icon_example.png">
+            <p id="mainBuildingStoneCost"></p>
+          </div>
+
+          <div>
+            <img src="/img/clay_icon_example.png">
+            <p id="mainBuildingClayCost"></p>
+          </div>
+
+        </div>
+
+        <div class="building-chart-cell">
+          <p id="mainBuildingCurrentLevel"></p>
+          <button id="upgradeMainBuilding">+1</button>
+        </div>
+
+        <div class="building-chart-cell">Barracks</div>
+
+        <div class="building-chart-cell">
+
+          <div>
+            <img src="/img/wood_icon_example.png">
+            <p id="barracksWoodCost"></p>
+          </div>
+
+          <div>
+            <img src="/img/stone_icon_example.png">
+            <p id="barracksStoneCost"></p>
+          </div>
+
+          <div>
+            <img src="/img/clay_icon_example.png">
+            <p id="barracksClayCost"></p>
+          </div>
+
+        </div>
+
+        <div class="building-chart-cell">
+          <p id="barracksCurrentLevel"></p>
+          <button id="upgradeBarracks">+1</button>
+        </div>
+
+        <div class="building-chart-cell">Wall</div>
+
+        <div class="building-chart-cell">
+
+          <div>
+            <img src="/img/wood_icon_example.png">
+            <p id="wallWoodCost"></p>
+          </div>
+
+          <div>
+            <img src="/img/stone_icon_example.png">
+            <p id="wallStoneCost"></p>
+          </div>
+
+          <div>
+            <img src="/img/clay_icon_example.png">
+            <p id="wallClayCost"></p>
+          </div>
+
+        </div>
+
+        <div class="building-chart-cell">
+          <p id="wallCurrentLevel"></p>
+          <button id="upgradeWall">+1</button>
+        </div>
+
+        <div class="building-chart-cell">Wood Mine</div>
+
+        <div class="building-chart-cell">
+
+          <div>
+            <img src="/img/wood_icon_example.png">
+            <p id="woodMineWoodCost"></p>
+          </div>
+
+          <div>
+            <img src="/img/stone_icon_example.png">
+            <p id="woodMineStoneCost"></p>
+          </div>
+
+          <div>
+            <img src="/img/clay_icon_example.png">
+            <p id="woodMineClayCost"></p>
+          </div>
+
+        </div>
+
+        <div class="building-chart-cell">
+          <p id="woodMineCurrentLevel"></p>
+          <button id="upgradeWoodMine">+1</button>
+        </div>
+
+        <div class="building-chart-cell">Stone Mine</div>
+
+        <div class="building-chart-cell">
+
+          <div>
+            <img src="/img/wood_icon_example.png">
+            <p id="stoneMineWoodCost"></p>
+          </div>
+
+          <div>
+            <img src="/img/stone_icon_example.png">
+            <p id="stoneMineStoneCost"></p>
+          </div>
+
+          <div>
+            <img src="/img/clay_icon_example.png">
+            <p id="stoneMineClayCost"></p>
+          </div>
+
+        </div>
+
+        <div class="building-chart-cell">
+          <p id="stoneMineCurrentLevel"></p>
+          <button id="upgradeStoneMine">+1</button>
+        </div>
+
+        <div class="building-chart-cell">Clay Mine</div>
+
+        <div class="building-chart-cell">
+
+          <div>
+            <img src="/img/wood_icon_example.png">
+            <p id="clayMineWoodCost"></p>
+          </div>
+
+          <div>
+            <img src="/img/stone_icon_example.png">
+            <p id="clayMineStoneCost"></p>
+          </div>
+
+          <div>
+            <img src="/img/clay_icon_example.png">
+            <p id="clayMineClayCost"></p>
+          </div>
+
+        </div>
+
+        <div class="building-chart-cell">
+          <p id="clayMineCurrentLevel"></p>
+          <button id="upgradeClayMine">+1</button>
+        </div>
+
+        <div class="building-chart-cell">Storage</div>
+
+        <div class="building-chart-cell">
+
+          <div>
+            <img src="/img/wood_icon_example.png">
+            <p id="storageWoodCost"></p>
+          </div>
+
+          <div>
+            <img src="/img/stone_icon_example.png">
+            <p id="storageStoneCost"></p>
+
+          </div>
+
+          <div>
+            <img src="/img/clay_icon_example.png">
+            <p id="storageClayCost"></p>
+          </div>
+
+        </div>
+
+        <div class="building-chart-cell">
+          <p id="storageCurrentLevel"></p>
+          <button id="upgradeStorage">+1</button>
+        </div>
+
+      </div>
+    </div>
+    <!--CENTER WINDOW END-->
+
+    <div class="rightmenu">
+
+      <div>
+        <p>Troops</p>
+        <ul id="troopsList">
+          <li id="swordsmanInCity"></li>
+          <li id="archerInCity"></li>
+          <li id="cavalryInCity"></li>
+        </ul>
+      </div>
+
+      <div>
+        <p>Construction</p>
+        <ol id="contructionQueue">
+          <li id="firstInQueue"></li>
+          <li id="secondInQueue"></li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="alliedMovements">
+      <p>My Movements:</p>
+      <ol id="AllyMovements">
+
+      </ol>
+    </div>
+
+    <div class="enemyMovements">
+      <p>Enemy Movements:</p>
+      <ol id="enemyMovements">
+
+      </ol>
+    </div>
+
+    <div class="settings"></div>
+
+    <div class="leaderboard">
+      <button id="goToLeaderboard" class="down-menu-buttons">leaderboard</button>
+      <button id="logout" class="down-menu-buttons">Logout</button>
+    </div>
+
+  </div>
+
+  <script src="p5.js"></script>
+  <script src="../addons/p5.sound.min.js"></script>
+  <script src="setup.js"></script>
+  <script src="initializeUI.js"></script>
+  <script src="buildingUpgradesTimers.js"></script>
+  <script src="attackTimer.js"></script>
+  <script src="buildingUpgrades.js"></script>
+  <script src="mainBuilding.js"></script>
+  <script src="/Classes/objects.js"></script>
+
+
+
+  <!--SCRIPT FOR CITY  DROPDOWN  MENU-->
+
+  <script>
+    /* When the user clicks on the button, toggle between hiding and showing the dropdown content */
+    function showCities() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown menu if the user clicks outside of it
+    window.onclick = function (event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>

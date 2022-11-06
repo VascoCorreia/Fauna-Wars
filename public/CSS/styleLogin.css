@@ -1,0 +1,135 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-image: url("/img/Background_Images/background.jpg");
+}
+
+form {
+  margin:20px;
+}
+
+input{
+    margin-top:10px;
+}
+
+select{
+    margin-top:10px;
+}
+
+@font-face{
+    font-family:textFont;
+    src: url(/img/textFont.ttf);
+}
+
+.wrapper {
+    display: grid;
+    gap: 10px;
+    margin: 5px 15%;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 16em 5em auto 10em;
+    grid-template-areas: 
+    "mainTitle mainTitle mainTitle mainTitle"
+    "pitch pitch pitch pitch"
+    "humanImg Register Login apeImg"
+    "Trailer Trailer Trailer Trailer";
+
+  }
+
+.mainTitle{
+    grid-area: mainTitle;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.Login{
+    display: grid;
+    grid-area:Login;
+    align-items: center;
+    border: 1px solid rgb(99, 99, 99);
+    background-color: rgba(182, 182, 182, 0.185);
+    border-radius: 20%;
+    
+}
+
+.Login > form{
+    display: inline-block;
+    width: 260px;
+    text-align: right; 
+}
+
+.Register{
+    display: grid;
+    grid-area:Register;
+    align-items: center;
+    border: 1px solid rgb(99, 99, 99);
+    background-color: rgba(182, 182, 182, 0.185);
+    border-radius: 20%;
+    
+}
+
+.Register > form{
+    display: inline-block;
+    width: 260px;
+    text-align: right;
+    
+}
+
+.humanImg{
+    display: grid;
+    grid-area: humanImg;
+    border: 1px solid rgb(99, 99, 99);
+    background-color: rgba(182, 182, 182, 0.185);
+    border-radius: 20%;
+}
+
+.apeImg{
+    display: grid;
+    grid-area: apeImg;
+    border: 1px solid rgb(99, 99, 99);
+    background-color: rgba(182, 182, 182, 0.185);
+    border-radius: 20%;
+}
+
+.Trailer{
+    grid-area:Trailer;
+    display: flex;
+    justify-content: center;
+    border-top: 2px solid black;
+}
+
+.pitch{
+    display: flex;
+    margin:0px;
+    padding:0px;
+    justify-content: center;
+    font-family: textFont;
+    font-size: 150%;
+    grid-area: pitch;
+}
+
+.myButton {
+	box-shadow: 0px 0px 0px 1px #f29c93;
+	background:linear-gradient(to bottom, #fe1a00 5%, #ce0100 100%);
+	background-color:#fe1a00;
+	border-radius:13px;
+	border:4px solid #d83526;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Georgia;
+	font-size:17px;
+	font-weight:bold;
+	padding:15px 51px;
+	text-decoration:none;
+    text-shadow:0px 0px 0px #b23e35;
+    margin-top: 10px;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #ce0100 5%, #fe1a00 100%);
+	background-color:#ce0100;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}

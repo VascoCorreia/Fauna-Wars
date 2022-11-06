@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="CSS/styleLogin.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <title>Login and Register</title>
+
+  <script src="p5.js"></script>
+  <script src="login.js"></script>
+
+</head>
+
+<body>
+
+  <div class="wrapper">
+
+    <div class="mainTitle">
+      <img src="/img/faunaWarsLogo.png" id="mainTitle"></img>
+    </div>
+
+    <div class="pitch">
+      <h3>Fauna Wars is a web browser real time strategy game where two factions: The Apes and the Humans are at war to
+        hold most of the world</h3>
+    </div>
+
+    <div class="Login">
+      <form method="POST" action="/login">
+        <b>Name:</b> <input type="text" name="username">
+        <b>Password:</b> <input type="password" name="password">
+        <button type="submit" class="myButton"> Login </button>
+      </form>
+    </div>
+
+    <div class="apeImg">
+      <img src="/img/Apes.png"></img>
+    </div>
+
+    <div class="Register">
+
+      <form method="POST" action="/Register">
+        <b>Name:</b> <input type="text" name="username">
+        <b>Password:</b> <input type="password" name="password">
+
+        <label for="chooseFaction">Choose a Faction:</label>
+
+        <select name="faction" id="chooseFaction">
+          <option value="Humans">Humans</option>
+          <option value="Apes">Apes</option>
+        </select>
+
+        <button type="submit" class="myButton"> Register </button>
+      </form>
+    </div>
+
+    <div class="humanImg">
+      <img src="/img/Humans.png"></img>
+    </div>
+
+    <div class="Trailer">
+      <video width="650" height="400" controls>
+        <source src="/img/sampleVideo.mp4" type="video/mp4">
+      </video>
+    </div>
+
+  </div>
+</body>
+
+</html>
